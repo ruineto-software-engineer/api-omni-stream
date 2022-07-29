@@ -28,7 +28,7 @@ public class StickerFactory {
 
     // 5. Write a sentence on the new image
     // 5.1 Calculation to center text
-    var stickerText = "AMAZING MOVIE";
+    var stickerText = "AMAZING!";
     var widthCenter = originalWidth / 2;
     var textCenter = stickerText.length() / 2;
     var centerDiff = widthCenter - textCenter;
