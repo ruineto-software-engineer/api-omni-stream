@@ -1,18 +1,16 @@
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
 public class StickerFactory {
-  public void createSticker() throws Exception {
+  public void createSticker(InputStream inputStream, String fileName) throws Exception {
     // 1. read the image
-    InputStream inputStream = new FileInputStream(new File("./input/movie.jpg"));
-    BufferedImage originalImage = ImageIO.read(new File("./input/movie.jpg"));
+    BufferedImage originalImage = ImageIO.read(inputStream);
 
     // 2. create a new image in memory with transparency and with a new size
     int originalWidth = originalImage.getWidth();
@@ -39,11 +37,7 @@ public class StickerFactory {
     graphics.drawString(stickerText, centerDiff / 2 - textCenter * 20, newHeight - 70);
 
     // 6. Write (create) the new image to a file
-    ImageIO.write(newImage, "png", new File("./output/movieSticker.png"));
-  }
-
-  public static void main(String[] args) throws Exception {
-    var generator = new StickerFactory();
-    generator.createSticker();
+    String pathname = "./output/";
+    ImageIO.write(newImage, "png", new File(pathname + fileName));
   }
 }
