@@ -5,8 +5,14 @@ import java.util.List;
 public class App {
   public static void main(String[] args) throws Exception {
     // 1. Make the HTTP connection and search the contents
-    String url = "https://api.nasa.gov/planetary/apod?api_key=PxAAeVqwaGJcCy86ut8ENDOZHqUwOPCbUoPyT4El&start_date=2022-07-25&end_date=2022-07-29";
-    ContentExtractor extractor = new NASAContentExtractor();
+    String url = "http://localhost:8080/languages";
+    ContentExtractor extractor = new LanguagesContentExtrator();
+
+    /*
+     * String url =
+     * "https://api.nasa.gov/planetary/apod?api_key=PxAAeVqwaGJcCy86ut8ENDOZHqUwOPCbUoPyT4El&start_date=2022-07-25&end_date=2022-07-29";
+     * ContentExtractor extractor = new NASAContentExtractor();
+     */
 
     /*
      * String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
