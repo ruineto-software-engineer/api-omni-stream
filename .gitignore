@@ -1,2 +1,4 @@
-.vscode
-bin
+bin/
+
+### VS Code ###
+.vscode/
